@@ -302,20 +302,18 @@ body {
     max-height: 70%;
   }
 
-  /* Ajuste de los botones de navegación del modal en móvil */
   #imgModal #prevModal,
   #imgModal #nextModal {
     font-size: 28px;
     padding: 8px;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10001; /* asegurar que esté por encima de todo */
+    z-index: 10001;
   }
 
-  #imgModal #prevModal { left: 10px; }  /* más cercano al borde */
+  #imgModal #prevModal { left: 10px; }
   #imgModal #nextModal { right: 10px; }
 
-  /* Evitar que los botones queden detrás de otras capas */
   .modal-nav,
   button#prevModal,
   button#nextModal {
