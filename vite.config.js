@@ -32,7 +32,8 @@ export default defineConfig({
   plugins: [
     handlebars({
       partialDirectory: resolve(__dirname, 'partials'), 
-      context: () => footer 
+      context: () => footer,
+      base : '/IACON_HN'
     }),
     htmlPurge({})
   ]
