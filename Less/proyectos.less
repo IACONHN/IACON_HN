@@ -1,0 +1,351 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+    h4 {
+      padding: 15px 20px 5px 20px;
+      font-size: 25px;
+      font-weight: 600;
+      color: #1F3A3D;
+      text-align: center;
+    }
+
+
+.proyectos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 25px;
+  margin: 40px 0;
+
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    width: calc(33.333% - 20px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .card-images {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        border-bottom: 1px solid #eee;
+      }
+
+      img.active {
+        opacity: 1;
+      }
+
+      .card-buttons {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        pointer-events: none;
+
+        button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 46px;
+          height: 46px;
+          border-radius: 50%;
+          border: none;
+          font-size: 26px;
+          color: #fff;
+          background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+          cursor: pointer;
+          opacity: 0.85;
+          pointer-events: all;
+          transition: all 0.2s ease;
+        }
+
+        button.prev {
+          left: 12px;
+        }
+
+        button.next {
+          right: 12px;
+        }
+
+        button:hover {
+          opacity: 1;
+          transform: translateY(-50%) scale(1.08);
+          background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
+        }
+      }
+    }
+
+    h3 {
+      padding: 15px 20px 5px 20px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #1F3A3D;
+      text-align: center;
+    }
+
+    p {
+      padding: 0 20px 15px 20px;
+      font-size: 14px;
+      color: #555;
+      text-align: justify;
+      line-height: 1.6;
+    }
+
+  }
+
+  @media screen and (max-width: 900px) {
+    .card {
+      width: calc(50% - 20px);
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .card {
+      width: 100%;
+    }
+
+    .card .card-images {
+      height: 200px;
+    }
+  }
+}
+
+.container h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 40px;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #a0f0d1, #4fc3f7);
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+  }
+}
+
+.lista-proyectos {
+  list-style: disc inside;
+  padding-left: 20px;
+  margin: 20px 0;
+
+  li {
+    padding-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.8;
+    text-align: justify;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+  }
+}
+
+.card h3,
+.card p,
+.card .lista-proyectos {
+  padding: 0 20px;
+}
+
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.image-modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  cursor: grab;
+  transition: transform 0.2s ease;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  font-size: 36px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.modal-nav:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.modal-nav.prev { left: 10px; }
+.modal-nav.next { right: 10px; }
+
+#imgModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: default;
+
+  img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  .close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    user-select: none;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  button#prevModal,
+  button#nextModal {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-50%) scale(1.2);
+    }
+  }
+
+  button#prevModal { left: 20px; }
+  button#nextModal { right: 20px; }
+}
+
+@media (max-width: 768px) {
+
+  .proyectos-container {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+
+    .card {
+      width: 95%;
+
+      .card-images {
+        height: 180px;
+
+        img {
+          height: 100%;
+        }
+
+        .card-buttons button {
+          padding: 5px 8px;
+          font-size: 16px;
+        }
+      }
+
+      h3 { font-size: 16px; }
+      p, .lista-proyectos li { font-size: 13px; }
+    }
+  }
+
+  .footer {
+    padding: 15px 5px;
+
+    .footer-inner {
+      flex-direction: column;
+      gap: 20px;
+
+      .footer-section {
+        max-width: 90%;
+        h4 { font-size: 14px; }
+        p { font-size: 13px; }
+      }
+    }
+
+    .footer-bottom { font-size: 12px; }
+  }
+
+  #imgModal img {
+    max-width: 95%;
+    max-height: 70%;
+  }
+
+  #imgModal #prevModal, #imgModal #nextModal {
+    font-size: 28px;
+    padding: 8px;
+  }
+}
+

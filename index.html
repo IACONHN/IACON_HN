@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="Less/header.less" rel="stylesheet/less" type="text/css" />
+  <link href="Less/footer.less" rel="stylesheet/less" type="text/css" />
+  <link href="Less/hero.less" rel="stylesheet/less" type="text/css" />
+  <link href="Less/index.less" rel="stylesheet/less" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/less"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>IACON - Ingenieros Asociados Constructores</title>
+  <link rel="shortcut icon" href="imgSource/imgmini.jpg" type="image/x-icon">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  {{>header}}
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>INGENIEROS ASOCIADOS CONSTRUCTORES S. DE R.L</h1>
+      <p>Construyendo calidad, seguridad y confianza en cada proyecto.</p>
+      <a href="#servicios" class="hero-btn">Ver más</a>
+    </div>
+  </section>
+
+
+  <div class="container">
+
+    <section class="info-section fade-in" id="reseñahistorica">
+      <h2 class="section-title">Reseña Histórica</h2>
+      <p class="section-text">
+        En 2005 se funda <strong>INGENIEROS ASOCIADOS CONSTRUCTORES S. DE R.L</strong> en Tegucigalpa M.D.C., por el
+        <strong>ING. EDDUIN ENOC
+          GARCIA MATUTE</strong> y el <strong>ING. EDUARDO MAURICIO GONZALEZ RODRIGUEZ.</strong> Seguidamente el ING.
+        EDUARDO GONZALEZ
+        retira sus acciones en esta empresa para vendérselas a la nueva socia <strong>ARQ. SANDRA MARIA ESCOBAR
+          DOMINGUEZ</strong> el 20
+        de enero del 2020. Un poco mas de un año después, el 17 de diciembre del 2021 el ING. EDDUIN GARCIA
+        vende sus acciones a la <strong>ING. GRACIERY MARIA OSAVAS TEJEDA</strong>, siendo la nueva socia de esta
+        empresa. Sin importar
+        los cambios de socios esta seguirá siendo una empresa dedicada a la formulación y ejecución de obras civiles en
+        Honduras, desarrollándose a largo plazo como empresa, adquiriendo nuevas experiencias y estudiando estas con el
+        objetivo de mejorar continuamente. La empresa constructora cuenta con el mejor equipo humano de alta capacidad y
+        experiencia, así como la mejor Calidad de mano de obra en el mercado de la Construcción; Actualmente desarrolla
+        proyectos de Estructura e Infraestructura en las ramas de Ingeniería Civil. En cuanto a nuestros clientes estos
+        pueden ser en el ámbito público como privado con el objetivo de adquirir mayor conocimiento y crecer en ambos
+        argumentos.<br />
+      <p class="section-text">Actualmente, la empresa continúa desarrollándose como líder en obras civiles en Honduras.
+      </p>
+      </p>
+      <p class="highlight-text">
+        IACON, más que un gran equipo de trabajo, es una gran familia que se preocupa por el desarrollo y crecimiento de
+        Honduras.
+      </p>
+    </section>
+
+    <div class="card-section fade-in">
+      <div class="info-card" id="mision">
+        <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <h3>Misión</h3>
+        <p>Somos una empresa que nos especializamos en la Ejecución de Obras Civiles donde nuestro objetivo principal es
+          cumplir las expectativas de nuestros
+          clientes para obtener la satisfacción de los mismos, contamos con el personal capacitado y tecnología de
+          punta. Siendo capaces de proporcionar servicios económicos
+          con elevados estándares de calidad, gracias a un recurso humano calificado en el área generando seguridad y
+          satisfacción
+          en nuestros clientes que nos brindan su confianza; comprometiéndonos a ser una empresa éticamente responsable.
+        </p>
+      </div>
+
+      <div class="info-card" id="vision">
+        <div class="card-icon"><i class="fa-solid fa-eye"></i></div>
+        <h3>Visión</h3>
+        <p>Ser una empresa competitiva con la capacidad de satisfacer toda área de la construcción nacional haciendo
+          crecer en el ámbito económico de nuestra empresa, a través del desarrollo técnico de la misma.</p>
+      </div>
+
+      <div class="info-card" id="politica">
+        <div class="card-icon"><i class="fa-solid fa-check-circle"></i></div>
+        <h3>Política de Calidad</h3>
+        <p>IACON es ingeniaría moderna capaz de proporcionar servicios económicos con elevados estándares de calidad,
+          gracias a un recurso humano calificado en el área generando seguridad y satisfacción en nuestros clientes que
+          nos brindan su confianza; comprometiéndonos a ser una empresa éticamente responsable.</p>
+      </div>
+
+      <div class="info-card" id="valores">
+        <div class="card-icon"><i class="fa-solid fa-handshake"></i></div>
+        <h3>Valores Fundamentales</h3>
+        <ul>
+          <li>Calidad del Trabajo Realizado y Servicios brindado; Buscando siempre la satisfacción del cliente nuestros
+            trabajos son realizados con carácter ingenieril.</li>
+          <li>Responsabilidad y compromiso en cada proyecto: Nuestra obligación es ser siempre competentes y tener
+            seriedad en cada obra de cualquier índole que se este realizando.</li>
+          <li>Trabajo en equipo: Tener la coordinación correcta y perfecta para alcanzar los objetivos definidos para
+            cada obra.</li>
+          <li>Orientación al cliente: Buscando el beneficio del cliente dirigiéndole por optar las mejores decisiones
+            para obtener el fin determinado.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <section class="home-card-container fade-in" id="servicios">
+    <h2>Proyectos Destacados</h2>
+    <div class="home-card">
+      <div class="home-card-image">
+        <img src="imgSource/crucitas2.jpg" alt="Adecuación de Contenedores">
+      </div>
+      <div class="home-card-title">
+        <h3>Adecuación de Contenedores</h3>
+      </div>
+      <div class="home-card-body">
+        <p>Proyecto realizado en Las Crucitas, Danlí para la Embajada Americana.</p>
+      </div>
+    </div>
+    <div class="home-card">
+      <div class="home-card-image">
+        <img src="imgSource/incv.jpeg" alt="Infraestructura Civil">
+      </div>
+      <div class="home-card-title">
+        <h3>Infraestructura Civil</h3>
+      </div>
+      <div class="home-card-body">
+        <p>Diseño y ejecución de obras estructurales en diferentes ciudades del país.</p>
+      </div>
+    </div>
+    <div class="home-card">
+      <div class="home-card-image">
+        <img src="imgSource/posta21_1.JPG" alt="Edificaciones Modernas">
+      </div>
+      <div class="home-card-title">
+        <h3>Edificaciones Modernas</h3>
+      </div>
+      <div class="home-card-body">
+        <p>Construcción de espacios innovadores con calidad y compromiso.</p>
+      </div>
+    </div>
+    <section class="contacto fade-in" id="contacto">
+      <h2>Dónde Encontrarnos</h2>
+      <div class="contacto-grid">
+        <div class="contacto-mapa">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4188.055777882023!2d-87.22356040000001!3d14.0446829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6f976f1ca455c1%3A0x48728589b8452946!2sEQUIPO%20DE%20CONSTRUCCION%20S.%20DE%20R.L.%20%22EDCON%22!5e1!3m2!1ses-419!2shn!4v1759377884556!5m2!1ses-419!2shn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            frameborder=" 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div class="contacto-card">
+          <h3>Oficina Central</h3>
+          <p><strong>Dirección:</strong> Col. Godoy, Altos de Toncontin, Llanos del Potrero, Carretera, Comayagüela,
+            M.D.C., Honduras.</p>
+          <p><strong>Teléfonos:</strong></br> (+504) 3214-3222</br> (+504) 9641-8921</br> (+504) 2213-4881</p>
+          <p><strong>Email:</strong> iacon900@yahoo.com</p>
+          <a href="https://www.google.com/maps/place/EQUIPO+DE+CONSTRUCCION+S.+DE+R.L.+%22EDCON%22/@14.0446829,-87.2235604,962m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8f6f976f1ca455c1:0x48728589b8452946!8m2!3d14.0446829!4d-87.2235604!16s%2Fg%2F11jw6fq2zz?entry=ttu&g_ep=EgoyMDI1MDkyOS4wIKXMDSoASAFQAw%3D%3D" 
+            target="_blank" class="btn-mapa">Cómo llegar</a>
+        </div>
+      </div>
+    </section>
+  </section>
+  </div>
+  {{>footer}}
+  <script src="/main.js" type="module"></script>
+</body>
+</html>

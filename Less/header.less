@@ -1,0 +1,141 @@
+.site-header {
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, #a0f0d1, #4fc3f7); 
+  box-shadow: 0 1px 5px rgba(0,0,0,0.08);
+  z-index: 1000;
+  position: sticky;
+  transition: all 0.3s ease;
+}
+
+.header-main {
+  padding: 10px 0;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 90px;
+  transition: height 0.3s ease;
+}
+
+.nav-list {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+}
+
+.nav-list li a:hover {
+  color: #fff; 
+  background: rgba(0,0,0,0.1);
+  border-radius: 5px;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger {
+  width: 25px;
+  height: 2px;
+  background-color: #000;
+  display: block;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background-color: #000;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.hamburger::before { top: -8px; }
+.hamburger::after { top: 8px; }
+
+@media (max-width: 768px) {
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #e0f7ef; 
+    flex-direction: column;
+    border-top: 1px solid #ccc;
+  }
+
+  .site-nav.open {
+    display: flex;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 70px;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #e0f7ef;
+    flex-direction: column;
+    border-top: 1px solid #ccc;
+  }
+
+  .site-nav.open {
+    display: flex;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
