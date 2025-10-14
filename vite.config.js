@@ -8,7 +8,7 @@ import { footer } from './data/common/footer.js';
 const obtenerEntradasHTML = () => {
   return Object.fromEntries(
     [
-      ...glob.sync('./**/*.html', {
+      ...glob.sync('./*.html', { 
         ignore: ["./dist/**", "./node_modules/**"]
       }).map(
         fileData => [
@@ -22,15 +22,16 @@ const obtenerEntradasHTML = () => {
 
 export default defineConfig({
   appType: 'mpa',
-  base: '/IACON_HN/', 
+  base: '/IACON_HN/',   
   build: {
     rollupOptions: {
       input: obtenerEntradasHTML()
-    }
+    },
+    outDir: 'dist'
   },
   plugins: [
     handlebars({
-      partialDirectory: resolve(__dirname, 'partials'),
+      partialDirectory: resolve(__dirname, 'partials'), 
       context: () => footer 
     }),
     htmlPurge({})
