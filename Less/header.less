@@ -2,8 +2,8 @@
   width: 100%;
   top: 0;
   left: 0;
-  background: linear-gradient(90deg, #a0f0d1, #4fc3f7); 
-  box-shadow: 0 1px 5px rgba(0,0,0,0.08);
+  background: linear-gradient(90deg, #a0f0d1, #4fc3f7);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
   z-index: 1000;
   position: sticky;
   transition: all 0.3s ease;
@@ -26,6 +26,11 @@
   transition: height 0.3s ease;
 }
 
+
+.site-nav {
+  display: flex;
+}
+
 .nav-list {
   display: flex;
   gap: 25px;
@@ -41,101 +46,96 @@
 }
 
 .nav-list li a:hover {
-  color: #fff; 
-  background: rgba(0,0,0,0.1);
+  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
 
 .nav-toggle {
   display: none;
+  cursor: pointer;
   background: none;
   border: none;
-  cursor: pointer;
+  z-index: 1001;
 }
 
-.hamburger {
-  width: 25px;
-  height: 2px;
-  background-color: #000;
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: "";
   display: block;
+  background: #000;
+  height: 3px;
+  width: 25px;
+  border-radius: 5px;
   position: relative;
   transition: all 0.3s ease;
 }
 
-.hamburger::before,
-.hamburger::after {
-  content: "";
+.hamburger::before {
   position: absolute;
-  width: 25px;
-  height: 2px;
-  background-color: #000;
+  top: -8px;
   left: 0;
-  transition: all 0.3s ease;
 }
 
-.hamburger::before { top: -8px; }
-.hamburger::after { top: 8px; }
+.hamburger::after {
+  position: absolute;
+  top: 8px;
+  left: 0;
+}
+
+.nav-toggle-checkbox {
+  display: none;
+}
 
 @media (max-width: 768px) {
   .site-nav {
     display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #e0f7ef96;
     position: absolute;
     top: 100%;
     left: 0;
-    right: 0;
-    background: #e0f7ef; 
-    flex-direction: column;
+    padding: 1rem 0;
     border-top: 1px solid #ccc;
-  }
-
-  .site-nav.open {
-    display: flex;
-  }
-
-  .nav-list {
-    flex-direction: column;
-    padding: 15px;
-    gap: 15px;
   }
 
   .nav-toggle {
     display: block;
   }
+
+  .nav-toggle-checkbox:checked ~ .site-nav {
+    display: flex;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .nav-list li a {
+    display: block;
+    padding: 10px;
+  }
 }
 
-@media (max-width: 768px) {
-  .header-inner {
+@media (min-width: 769px) {
+  .nav-toggle,
+  .nav-toggle-checkbox {
+    display: none !important;
+  }
+
+  .site-nav {
+    display: flex !important;
+    position: static;
+    background: none;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .logo img {
-    height: 70px;
-  }
-
-  .site-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #e0f7ef;
-    flex-direction: column;
-    border-top: 1px solid #ccc;
-  }
-
-  .site-nav.open {
-    display: flex;
+    border: none;
   }
 
   .nav-list {
-    flex-direction: column;
-    padding: 15px;
-    gap: 15px;
-  }
-
-  .nav-toggle {
-    display: block;
+    flex-direction: row;
   }
 }

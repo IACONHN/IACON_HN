@@ -296,57 +296,31 @@ body {
 
 @media (max-width: 768px) {
 
-  .proyectos-container {
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-
-    .card {
-      width: 95%;
-
-      .card-images {
-        height: 180px;
-
-        img {
-          height: 100%;
-        }
-
-        .card-buttons button {
-          padding: 5px 8px;
-          font-size: 16px;
-        }
-      }
-
-      h3 { font-size: 16px; }
-      p, .lista-proyectos li { font-size: 13px; }
-    }
-  }
-
-  .footer {
-    padding: 15px 5px;
-
-    .footer-inner {
-      flex-direction: column;
-      gap: 20px;
-
-      .footer-section {
-        max-width: 90%;
-        h4 { font-size: 14px; }
-        p { font-size: 13px; }
-      }
-    }
-
-    .footer-bottom { font-size: 12px; }
-  }
-
+@media (max-width: 768px) {
   #imgModal img {
     max-width: 95%;
     max-height: 70%;
   }
 
-  #imgModal #prevModal, #imgModal #nextModal {
+  /* Ajuste de los botones de navegación del modal en móvil */
+  #imgModal #prevModal,
+  #imgModal #nextModal {
     font-size: 28px;
     padding: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10001; /* asegurar que esté por encima de todo */
+  }
+
+  #imgModal #prevModal { left: 10px; }  /* más cercano al borde */
+  #imgModal #nextModal { right: 10px; }
+
+  /* Evitar que los botones queden detrás de otras capas */
+  .modal-nav,
+  button#prevModal,
+  button#nextModal {
+    pointer-events: all;
+    display: block;
   }
 }
-
+}
