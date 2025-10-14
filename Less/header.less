@@ -89,11 +89,23 @@
 }
 
 @media (max-width: 768px) {
-  .site-header {
-  position: sticky;
-  top: auto;
+/* === Fix header sin tapar el contenido === */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
 
-  }
+/* Espacio invisible para compensar el header fijo */
+body::before {
+  content: "";
+  display: block;
+  height: 110px; /* ajusta si tu header es más alto o más bajo */
+}
+
+
 
   .site-nav {
     display: none;
