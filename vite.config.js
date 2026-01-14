@@ -22,7 +22,7 @@ const obtenerEntradasHTML = () => {
 
 export default defineConfig({
   appType: 'mpa',
-  base: '/',   
+  base: '/IACON_HN/',   
   build: {
     rollupOptions: {
       input: obtenerEntradasHTML()
@@ -33,7 +33,7 @@ export default defineConfig({
     handlebars({
       partialDirectory: resolve(__dirname, 'partials'), 
       context: () => footer,
-      base : '/'
+      base : '/IACON_HN/'
     }),
     htmlPurge({})
   ]
